@@ -1,0 +1,1560 @@
+/* General Layout */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 20px;
+  padding: 0 20px;
+}
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin-top: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.dashboard-title {
+  font-size: 1.5em;
+  margin-right: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.lock-icon {
+  font-size: 1.2em;
+  margin-right: 20px;
+  color: #ff9800;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.lock-icon:hover {
+  color: #e68900;
+  transform: rotate(15deg);
+  filter: brightness(1.15);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Password Popup */
+.password-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.password-popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  animation: popup-fade-in 0.5s ease-in-out;
+}
+
+.password-popup-content h3 {
+  margin-bottom: 15px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.password-popup-content .password-input-container,
+.password-popup-content .reason-input-container {
+  margin-bottom: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.password-popup-content label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.password-popup-content input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.password-popup-content input:focus {
+  border: 1px solid #ff9800;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.password-popup-content .popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.3s ease-in-out;
+}
+
+.password-popup-content .popup-buttons button {
+  background: #ffc107;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.password-popup-content .popup-buttons button:hover {
+  background: #ff9800;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Tooltip Lock Container */
+.tooltip-lock {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip Lock Text */
+.tooltip-lock .tooltiptext {
+  visibility: hidden;
+  width: auto;
+  max-width: 150px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 6px 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 130%; /* Position the tooltip above the lock icon */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+/* Tooltip Lock Arrow */
+.tooltip-lock .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+/* Show Tooltip Lock on Hover */
+.tooltip-lock:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Switch Container */
+.switch-container {
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  border: 3px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.switch-container span {
+  padding: 8px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #000;
+  transition: all 0.3s ease-in-out;
+}
+
+.switch-container span.active {
+  background: #ff9900;
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.switch-container span.inactive {
+  background: #888;
+  color: #000;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Keyframes for Animation */
+@keyframes popup-fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Header Buttons */
+.header-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.share-ai-button,
+.free-plan-button {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 1em;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform-origin: center;
+}
+
+.share-ai-button {
+  background: linear-gradient(to right, #ff9800, #ff9800);
+  border: 2px solid #ff9800;
+}
+
+.share-ai-button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 30px;
+  padding: 3px;
+  background: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    violet
+  );
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+}
+
+.free-plan-button {
+  background: linear-gradient(to right, #00c853, #00c853);
+  border: 2px solid #00c853;
+}
+
+.share-ai-button:hover,
+.free-plan-button:hover {
+  transform: scale(1.05) translateZ(0); /* Stabilize the transform */
+  padding: 9.5px 24.5px; /* Compensate for the slight size change */
+}
+
+/* Share Popup Overlay */
+.share-popup-overlay {
+  display: none;
+}
+
+.share-popup-overlay.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease-in-out, popupShow 0.3s ease-in-out;
+}
+
+/* Share Popup */
+.share-popup {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 450px;
+  max-width: 95%;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  animation: popupShow 0.3s ease-in-out;
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* Title */
+.share-popup h3 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+/* Instructional Text */
+.share-popup p {
+  font-size: 1em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.share-popup a {
+  color: #00c853;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.share-popup a:hover {
+  text-decoration: underline;
+}
+
+/* Share URL Section */
+.share-url {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.share-url input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 15px;
+  font-weight: bold;
+  background-color: #f9f9f9;
+}
+
+.copy-button {
+  padding: 10px 15px;
+  background-color: #00c853;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  font-weight: bold;
+}
+
+.copy-button:hover {
+  background-color: #00a545;
+}
+
+/* URL Handle Section */
+.handle-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.url-handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.url-handle span {
+  background: linear-gradient(to right, #ff9800, #00c853);
+  padding: 8px 15px;
+  border-radius: 5px 0 0 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.url-handle input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 0 5px 5px 0;
+  margin-left: 0;
+  font-weight: bold;
+  background-color: #f9f9f9;
+  flex: 1;
+}
+
+/* QR Section */
+.qr-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.qr-label {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.qr-label label {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.qr-code {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+}
+
+/* Share Buttons */
+.share-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.share-buttons button {
+  flex: 1;
+  padding: 10px 15px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.share-buttons button svg {
+  margin-right: 8px;
+  font-size: 1.2em;
+}
+
+.facebook-button {
+  background-color: #3b5998;
+}
+
+.twitter-button {
+  background-color: #1da1f2;
+}
+
+.linkedin-button {
+  background-color: #0077b5;
+}
+
+.share-buttons button:hover {
+  transform: scale(1.05) translateZ(0);
+}
+
+/* Free Plan Button */
+.free-plan-container {
+  position: relative;
+}
+
+.free-plan-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 25px; /* Padding for the button */
+  background-color: #00c853; /* Green background color */
+  color: white; /* White text color */
+  border-radius: 30px; /* Rounded corners */
+  border: none; /* Remove border */
+  font-weight: bold; /* Bold text */
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  font-size: 1em; /* Font size */
+}
+
+.free-plan-button:hover {
+  background-color: #ff9800; /* Orange background on hover */
+  transform: scale(1.05) translateZ(0);
+}
+
+/* Icon in the button */
+.free-plan-button svg {
+  font-size: 1.2em; /* Size of the icon */
+  color: white; /* White color for the icon */
+}
+
+/* Popup Menu */
+/* Free Plan Popup */
+.free-plan-popup {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+  width: 150px;
+  z-index: 1000;
+  animation: popupShow 0.3s ease-in-out;
+}
+
+.free-plan-user {
+  display: block;
+  padding: 8px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+.free-plan-menu {
+  margin-top: 5px;
+}
+
+.free-plan-menu button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #333;
+  transition: background 0.3s ease-in-out;
+}
+
+.free-plan-menu button:hover {
+  background: #90ee90;
+  border-radius: 8px;
+}
+
+.free-plan-menu button svg {
+  font-size: 1.2em;
+  color: #333;
+}
+
+/* Popup Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popupShow {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Dashboard Content */
+.dashboard-content {
+  margin-top: 30px;
+}
+
+/* Stats Container */
+.stats-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px; /* Consistent border-radius */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for box-shadow */
+}
+
+/* Stats Header */
+.stats-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.stats-header h2 {
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out; /* Smooth transition for text color */
+}
+
+.stats-header h2 svg {
+  margin-right: 10px;
+}
+
+.total-automated-responses {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+/* Stats Section */
+.stats {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 15px; /* Consistent border-radius */
+  flex: 1 1 calc(25% - 20px); /* Four columns with gaps */
+  max-width: calc(25% - 20px); /* Max width with gaps */
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for box-shadow */
+}
+
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.stat-header svg {
+  margin-right: 10px;
+}
+
+.stat p {
+  font-size: 1.5em;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.stat small {
+  font-size: 0.8em;
+  color: #888;
+  font-weight: bold;
+}
+
+.stat a {
+  color: #28a745;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out; /* Smooth transition for text color */
+}
+
+.stat a:hover {
+  text-decoration: underline;
+}
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #555; /* Slightly lighter background */
+  color: #fff;
+  text-align: center;
+  border-radius: 8px; /* Slightly larger radius for a softer look */
+  padding: 8px; /* More padding for better readability */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above the element */
+  left: 50%;
+  margin-left: -100px;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s ease-in-out; /* Add a smooth transition */
+  font-size: 0.85em; /* Slightly larger text */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for better visibility */
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent; /* Match background color */
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-5px); /* Slight upward movement for a subtle effect */
+}
+
+/* Embed Section */
+.embed-section {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  padding: 20px;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.embed-section {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  padding: 15px; /* Reduced padding to decrease box height */
+  max-width: 100%;
+  width: 100%;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.embed-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 10px;
+}
+
+.embed-header h3 {
+  margin-right: 20px; /* Added gap between "Add to Website" text and buttons */
+  font-size: 1.2em;
+}
+
+.embed-buttons {
+  display: flex;
+  gap: 15px; /* Adjusted gap between the buttons */
+  margin-left: 0;
+}
+
+.embed-button {
+  background: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 8px 15px; /* Reduced padding to fit the reduced box height */
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+  font-size: 1em;
+}
+
+.embed-button:hover {
+  background: #e6e6e6;
+  border-color: #ff9800;
+  color: #ff9800;
+}
+
+.embed-header-border {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, #ff9800, #ddd, #ff9800);
+  margin-bottom: 15px; /* Reduced margin to decrease overall box height */
+}
+
+.expand-collapse-button {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: transform 0.3s ease-in-out;
+  padding: 5px;
+  position: absolute;
+  top: 15px; /* Adjusted position to fit reduced box height */
+  right: 20px;
+}
+
+.expand-collapse-button:hover {
+  transform: scale(1.1);
+  color: #ff9800;
+}
+
+.embed-code {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 10px; /* Reduced padding */
+  border-radius: 5px;
+  margin-top: 15px;
+  font-family: monospace;
+  font-size: 0.9em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copy-button {
+  background: #00c853;
+  color: #fff;
+  border: none;
+  padding: 8px 15px; /* Reduced padding */
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  font-size: 1em;
+}
+
+.copy-button:hover {
+  background: #00a73e;
+}
+
+.warning-text {
+  font-size: 0.9em;
+  color: #d32f2f;
+  margin-top: 10px;
+}
+
+.warning-text a {
+  color: #388e3c;
+  text-decoration: none;
+}
+
+.warning-text a:hover {
+  text-decoration: underline;
+}
+
+.plus-minus-buttons {
+  display: flex;
+  gap: 5px;
+  margin-left: auto;
+}
+
+.embed-button {
+  background: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+  font-size: 1em;
+}
+
+.plus-button,
+.minus-button {
+  background: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  font-size: 1em;
+}
+
+.plus-button:hover,
+.minus-button:hover,
+.embed-button:hover {
+  background: #e6e6e6;
+}
+
+.warning-text {
+  font-size: 0.9em;
+  color: #d32f2f;
+  margin-top: 10px;
+}
+
+.warning-text a {
+  color: #388e3c;
+  text-decoration: none;
+}
+
+.warning-text a:hover {
+  text-decoration: underline;
+}
+
+.embed-code {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 15px;
+  font-family: monospace;
+  font-size: 0.9em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copy-button {
+  background: #00c853;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  font-size: 1em;
+}
+
+.copy-button:hover {
+  background: #00a73e;
+}
+
+.expand-collapse-button {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: transform 0.3s ease-in-out;
+  padding: 5px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.expand-collapse-button:hover {
+  transform: scale(1.1);
+}
+
+.expand-collapse-button i {
+  font-size: 1.2em;
+}
+
+/* GTM Embed Popup */
+.analytics-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.analytics-popup {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.analytics-popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #333;
+}
+
+.analytics-popup h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.analytics-popup p {
+  font-size: 1em;
+  margin-bottom: 15px;
+  color: #666;
+  text-align: left;
+}
+
+.analytics-popup p a {
+  color: #388e3c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.analytics-popup p a:hover {
+  text-decoration: underline;
+}
+
+.analytics-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.copy-button {
+  background-color: #00c853;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+
+.copy-button:hover {
+  background-color: #00a73e;
+  transform: translateY(-2px);
+}
+
+.analytics-popup-ok {
+  background-color: #00c853;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+  font-size: 0.9em;
+  margin-top: 20px;
+}
+
+.analytics-popup-ok:hover {
+  background-color: #00a73e;
+  transform: translateY(-2px);
+}
+
+.analytics-popup-ok:active {
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Insights Section */
+.insights-section {
+  margin-top: 20px;
+}
+
+.insights-content {
+  background: #ffffff; /* Set the container box background to white */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px; /* Reduced padding to make the box smaller */
+  transition: all 0.3s ease-in-out;
+}
+
+.insights-content h3 {
+  padding: 8px; /* Reduced padding to match the smaller box */
+  margin-bottom: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333; /* Set color as in the screenshot */
+}
+
+.insights-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 15px;
+  background: #ffffff;
+  border-bottom: 1px solid #ddd;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.date-range-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.date-picker-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.start-date-container,
+.end-date-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 200px; /* Ensure the container has a set width */
+}
+
+.calendar-icon {
+  position: absolute;
+  right: 10px; /* Keep the icon on the right side */
+  font-size: 16px;
+  color: #888; /* Grey color for the icon */
+  pointer-events: none;
+  z-index: 1;
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.calendar-icon:hover {
+  color: orange; /* Turn icon orange on hover */
+}
+
+.date-picker {
+  padding: 8px 10px 8px 10px; /* Adjusted padding to remove space for the icon on the left */
+  border: 1px solid #ddd;
+  font-size: 0.9em;
+  color: #555;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 5px;
+  width: 100%; /* Use full width of the container */
+  padding-right: 35px; /* Added padding to the right for the calendar icon */
+}
+
+.date-picker:hover {
+  border-color: orange; /* Orange border on hover */
+  box-shadow: 0 0 5px rgba(255, 165, 0, 0.5); /* Smooth orange glow */
+}
+
+.date-picker:focus,
+.date-picker:active {
+  border-color: orange; /* Orange border on focus (click) */
+  box-shadow: 0 0 5px rgba(255, 165, 0, 0.5); /* Orange glow on focus (click) */
+}
+
+.date-range-arrow {
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  font-size: 1.2em;
+  color: #888; /* Grey color for the arrow */
+}
+
+.date-range-arrow i.fas.fa-arrow-right:hover {
+  color: orange; /* Turn arrow orange on hover */
+}
+
+/* Container for date range and dropdown */
+.date-range-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Container for dropdown with added margin */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px; /* Added margin-left */
+}
+
+/* Dropdown toggle button */
+.dropdown-toggle {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+/* Chevron icon styling */
+.dropdown-toggle .fas.fa-chevron-down {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+/* Glow effect on border */
+.dropdown-toggle:hover {
+  border-color: #ffa500; /* Orange border on hover */
+  box-shadow: 0 0 8px rgba(255, 165, 0, 0.8); /* Orange glow effect */
+  color: #ffa500;
+  border-radius: 4px;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  max-height: 200px; /* Set max-height for scrollbar */
+  overflow-y: auto; /* Enable vertical scrollbar */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 5px 0;
+  margin-top: 8px; /* Small gap between dropdown button and menu */
+  border-radius: 4px;
+}
+
+/* Show dropdown on click */
+.dropdown-menu.show {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Dropdown menu items with reduced spacing */
+.dropdown-menu li {
+  padding: 6px 8px; /* Reduced padding for smaller space */
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease,
+    color 0.3s ease;
+  border-radius: 4px;
+  text-align: center; /* Align text to the center */
+}
+
+/* Menu item links */
+.dropdown-menu li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 13px; /* Reduced font size */
+  display: block;
+  border-radius: 4px;
+  text-align: center; /* Center align the text */
+}
+
+/* Hover effect for dropdown items with light orange background */
+.dropdown-menu li:hover {
+  border-color: #ffa500; /* Orange border on hover */
+  color: #ffa500;
+  background-color: rgba(
+    255,
+    166,
+    0,
+    0.474
+  ); /* Light orange background on hover */
+  border-radius: 5px; /* Border radius for hover effect */
+  width: 95%; /* Set width to 95% */
+  margin: 0 auto; /* Center align the hover effect within the dropdown */
+}
+
+/* Animation for dropdown menu */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Adjusting the size of the dropdown box */
+.dropdown-menu li a {
+  padding: 6px 8px; /* Reduced padding for smaller space */
+  font-size: 13px;
+  border-radius: 4px;
+}
+
+/* Custom scrollbar styling */
+.dropdown-menu::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+  background-color: #888; /* Grey scrollbar thumb */
+  border-radius: 4px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Light grey background for scrollbar track */
+}
+
+/* Added styles for the calendar popup */
+.ui-datepicker,
+.ui-datepicker-inline {
+  background: #ffffff; /* White background for the calendar popup */
+  border: 1px solid #ddd;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.ui-datepicker-header {
+  background: #f7f7f7; /* Slightly different shade for the header if needed */
+  border-bottom: 1px solid #ddd;
+}
+
+.ui-datepicker-calendar .ui-state-hover {
+  background: rgba(255, 165, 0, 0.2); /* Orange background hover effect */
+}
+
+.ui-datepicker-calendar .ui-state-active {
+  background: orange; /* Orange background for selected date */
+  color: white; /* White text for selected date */
+}
+
+.chart-container {
+  background: #ffffff; /* Set background to white */
+  padding: 15px; /* Reduced padding to make the box smaller */
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px; /* Reduced padding to match the smaller box */
+}
+
+.chart-container h4 {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333; /* Match the font style to the screenshot */
+}
+
+.chart-container .chart {
+  margin-top: -8px;
+  height: 250px; /* Maintain the fixed height */
+  width: 100%; /* Make the width of the chart 100% of the container */
+  background: none; /* Remove the background if you had any */
+}
+
+.chart img {
+  max-width: 95%;
+  height: auto;
+  display: block; /* Remove any inline spacing */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chart-info {
+  font-size: 0.9em;
+  display: flex;
+  gap: 10px;
+  color: #555; /* Match the text color to the screenshot */
+}
+
+.chart-info span {
+  font-weight: bold; /* Make the total text bold */
+  color: #888; /* Set the default text color to grey */
+}
+
+.chart-info span:nth-child(2) {
+  color: orange; /* Set visitor count to orange */
+}
+
+.chart-info span:nth-child(4) {
+  color: orange; /* Set thumbs up count to orange */
+}
+
+.chart-info span:nth-child(6) {
+  color: orange; /* Set thumbs down count to orange */
+}
+
+.chart-info span:nth-child(8) {
+  color: orange; /* Set bot messages count to orange */
+}
+
+.links-container {
+  margin-top: 15px; /* Reduced margin to match the smaller box */
+}
+
+.links-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f8f8; /* Set the background color similar to the image */
+  padding: 8px; /* Reduced padding to match the smaller box */
+  border-radius: 10px 10px 0 0;
+  border-bottom: none; /* Removed the line below */
+}
+
+.links-container h4 {
+  font-size: 1em;
+  font-weight: bold;
+  color: #333; /* Adjusted to match the screenshot */
+}
+
+.count-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Increased gap between the count text and caret icons */
+  margin-left: -15px; /* Moved the count text and caret icons slightly to the left */
+  position: relative; /* Added relative position for tooltip */
+}
+
+.caret-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.caret-icons i {
+  margin: 0;
+  color: #333; /* Adjusted to match the screenshot */
+}
+
+.caret-icons i + i {
+  margin-top: -2px; /* Reduced the distance between the caret up and down icons */
+}
+
+.caret-icons i:hover {
+  color: orange; /* Hover effect for caret icons */
+}
+
+.caret-icons i:active::after {
+  content: attr(
+    data-hover-text
+  ); /* Use the data-hover-text attribute for the tooltip */
+  position: absolute;
+  transform: translateX(-50%);
+  background: #555;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 0.75em; /* Smaller font size for hover text */
+  white-space: nowrap;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  text-transform: lowercase; /* Make the hover text lowercase */
+}
+
+.caret-icons i:active.fa-caret-up::after {
+  bottom: 100%; /* Position the hover text above the up button */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.caret-icons i:active.fa-caret-down::after {
+  top: 100%; /* Position the hover text below the down button */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.caret-icons i::after {
+  opacity: 0;
+}
+
+.count-text {
+  font-weight: bold; /* Made the count text bold */
+  color: #333; /* Set the color to match the screenshot */
+}
+
+/* Adjusting No Data Section */
+.no-data {
+  text-align: center;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 0 0 10px 10px;
+  color: grey;
+  height: 40px; /* Increased the height slightly for larger icon and text */
+}
+
+.no-data i {
+  font-size: 2.5em; /* Increased icon size */
+  margin-bottom: 5px;
+  color: grey; /* Set icon color to grey */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Added shadow effect */
+}
+
+.no-data p {
+  font-size: 1em; /* Increased text size */
+  font-weight: bold; /* Made the text bold */
+  margin: 0;
+  color: grey; /* Set text color to grey */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Added shadow effect */
+}
+
+/* Danger Zone */
+.danger-zone {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #fff3f3;
+  border: 1px solid #f44336;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 100%; /* Maintains full width for responsiveness */
+  margin-left: 0;
+  margin-right: 0;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.danger-zone h3 {
+  font-size: 1.5em;
+  color: #f44336;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.danger-zone .danger-icon {
+  margin-right: 10px;
+}
+
+.danger-zone hr {
+  border: none;
+  border-top: 1px solid #f44336;
+  margin: 20px 0;
+}
+
+.danger-zone .danger-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #f44336;
+  font-weight: bold;
+}
+
+.danger-zone .delete-button {
+  background: #f44336;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.danger-zone .delete-button:hover {
+  background: #d32f2f;
+  transform: scale(1.05);
+}

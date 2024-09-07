@@ -1,0 +1,614 @@
+.create-agent-container {
+  display: flex;
+  flex-direction: row; /* Align items in a row */
+  padding: 20px;
+}
+
+.right-placeholders {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align items to the right */
+  gap: 100px; /* Space between placeholders */
+  margin-left: auto;
+}
+
+.placeholder {
+  width: 150px; /* Adjust the width as needed */
+  height: 150px; /* Adjust the height as needed */
+  background-color: #f0f0f0; /* Light grey background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px; /* Adjust the font size as needed */
+  font-weight: bold;
+  color: #333; /* Dark grey text color */
+  border-radius: 8px; /* Optional: add some border radius for rounded corners */
+  margin: 10px; /* Adjust the margin to control spacing between placeholders */
+}
+
+.large-placeholder {
+  width: 500px; /* Adjust width as needed */
+  height: 800px; /* Adjust height as needed */
+  border: 3px dashed #ccc; /* Thicker dashed border */
+  background-color: #e0e0e0; /* Slightly darker background color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem; /* Larger font size */
+  color: #666; /* Darker text color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+  margin-left: 0;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #000;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-right: 800px;
+}
+
+.create-agent-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.create-agent-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.how-it-works-button {
+  background: #ffffff;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.how-it-works-button:hover {
+  border-color: #ff9800;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.input-group label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-right: 20px;
+  white-space: nowrap;
+}
+
+.input-group input {
+  width: 385px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.fetch-links-button {
+  padding: 10px 20px;
+  background-color: #ffffff; /* Background color for the button */
+  border: 2px solid #ff9800; /* Border color to match the theme */
+  border-radius: 5px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+.fetch-links-button:hover {
+  background: #ff9800;
+  color: white; /* Change text color on hover */
+  border-color: #e67e00; /* Slightly darker border color on hover */
+}
+.create-agent-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 45%; /* Adjust width as needed */
+  height: 160vh;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 3px, transparent 2px);
+  background-size: 20px 20px; /* Adjust size of the dots */
+  z-index: -1; /* Ensure the background is behind other content */
+}
+.domains-list {
+  margin-top: 40px;
+}
+
+.domains-list h2 {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.domains-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.domains-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.domains-list li input {
+  width: 80%;
+  padding: 10px;
+}
+
+.domains-list li button {
+  width: 30px; /* Set the width to make it circular */
+  height: 30px; /* Set the height to make it circular */
+  padding: 0; /* Remove padding to keep the button circular */
+  margin-left: 10px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: 2px solid black; /* Add a solid border */
+  border-radius: 50%; /* This makes the button circular */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px; /* Increase the font size for the minus sign */
+  line-height: 1; /* Ensure the minus sign is centered */
+}
+
+.domains-list li button:hover {
+  border-color: #ff9800; /* Change the border color on hover */
+  color: #ff9800; /* Optional: change the text color to match the border on hover */
+}
+.add-domain-button {
+  display: flex;
+  justify-content: center;
+  width: 30px; /* Set the width to make it circular */
+  height: 30px; /* Set the height to make it circular */
+  padding: 0; /* Remove padding to keep the button circular */
+  margin-left: 40%;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: 2px solid black; /* Add a solid border */
+  border-radius: 50%; /* This makes the button circular */
+  cursor: pointer;
+  align-items: center;
+  font-size: 20px; /* Increase the font size for the minus sign */
+  line-height: 1;
+}
+
+.add-domain-button:hover {
+  border-color: #ff9800; /* Change the border color on hover */
+  color: #ff9800;
+}
+
+.add-domain-input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.add-domain-input-group input {
+  align-items: flex-start;
+  width: 80%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.add-domain-input-group button {
+  padding: 10px 15px; /* Adjust padding for a smaller button */
+  background-color: #ffffff; /* Background color for the button */
+  border: 2px solid #ff9800; /* Border color to match the theme */
+  border-radius: 5px;
+  font-size: 0.75rem; /* Smaller font size */
+  cursor: pointer;
+  white-space: nowrap; /* Prevent text from wrapping */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+  display: inline-flex; /* Ensure button contents are aligned properly */
+  align-items: center; /* Center text vertically */
+  margin-right: 85px;
+}
+
+.add-domain-input-group button:hover {
+  background: #ff9800;
+  color: white; /* Change text color on hover */
+  border-color: #e67e00; /* Slightly darker border color on hover */
+}
+
+.language-selector {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 20px; /* Adds a small margin from the edges */
+}
+
+.language-selector select {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 14px;
+}
+
+.language-selector select:hover {
+  border-color: #ff9800;
+}
+.required {
+  color: red;
+  margin-left: 4px;
+}
+
+.business-name-group h3 {
+  margin-top: 20px;
+}
+
+.business-name-group input.invalid {
+  border: 1px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 4px;
+}
+
+.business-name-input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.business-name-input-group input {
+  width: 78%; /* Adjust width as needed */
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.languages-dropdown {
+  padding: 8px;
+  margin-left: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  margin-right: 90px;
+  width: 250px;
+}
+
+.languages-dropdown:hover {
+  border-color: #ff9800;
+}
+/* Gradient Border Toggle */
+.gradient-border-toggle {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.gradient-border-toggle label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.gradient-border-toggle input[type="checkbox"] {
+  display: none; /* Hide the default checkbox */
+}
+
+.gradient-border-toggle .slider {
+  position: relative;
+  width: 34px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.4s;
+  margin-left: 10px;
+}
+
+.gradient-border-toggle .slider:before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: white;
+  transition: 0.4s;
+  transform: translateX(2px);
+}
+
+.gradient-border-toggle input:checked + .slider {
+  background-color: #ff9800; /* Green color when checked */
+}
+
+.gradient-border-toggle input:checked + .slider:before {
+  transform: translateX(14px); /* Move the slider handle to the right */
+}
+
+.color-picker-grid {
+  display: flex;
+  align-items: center;
+  margin-top: 20px; /* Add margin for spacing */
+}
+
+.color-swatch {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.color-input {
+  display: flex;
+  align-items: center;
+}
+
+.color-input input {
+  width: 80px;
+  margin-left: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.chrome-picker-wrapper {
+  position: relative; /* Ensure the picker is positioned relative to its container */
+  margin-top: 20px; /* Space between picker and other elements */
+}
+
+/* Updated Custom Color Button Styles */
+.color-picker-grid button {
+  padding: 8px 15px; /* Add padding for a balanced appearance */
+  margin-left: 10px; /* Add margin for spacing */
+  background-color: #ffffff; /* Background color for the button */
+  border: 2px solid #ff9800; /* Border color to match the theme */
+  border-radius: 5px; /* Rounded corners for a smooth look */
+  cursor: pointer; /* Change the cursor to pointer on hover */
+  font-size: 1rem; /* Adjust font size */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+.color-picker-grid button:hover {
+  background-color: #ff9800; /* Change background color on hover */
+  color: white; /* Change text color on hover */
+  border-color: #e67e00; /* Slightly darker border color on hover */
+}
+
+.create-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ffffff; /* Background color for the button */
+  border: 2px solid #ff9800; /* Border color to match the theme */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 550px; /* Pushes the button to the right side */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+  margin-left: 680px;
+}
+
+.create-button:hover {
+  background: #ff9800;
+  color: white; /* Change text color on hover */
+  border-color: #e67e00; /* Slightly darker border color on hover */
+}
+
+/* Switch Container */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.how-it-works-button {
+  margin-right: 16px;
+}
+
+.switch-container {
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  border: 3px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  animation: popup-fade-in 0.5s ease-in-out;
+}
+
+.switch-container span {
+  padding: 8px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #000;
+  transition: all 0.3s ease-in-out;
+}
+
+.switch-container span.active {
+  background: #ff9900;
+  color: #fff;
+  font-weight: bold;
+}
+
+.switch-container span.inactive {
+  background: #888;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Keyframes for Animation */
+@keyframes popup-fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(0.8);
+  animation: scaleUp 0.3s forwards;
+}
+
+.modal-close-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-close-button:hover {
+  background-color: #e68a00;
+}
+
+/* Keyframes for Modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Placeholder Section */
+.placeholder-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Space between placeholder elements */
+  margin-top: 40px; /* Adds some margin at the top */
+}
+
+.placeholder-header {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.placeholder-subheader {
+  font-size: 18px;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.small-placeholder {
+  width: 500px; /* Width of the smaller placeholders */
+  height: 250px; /* Height of the smaller placeholders */
+  border: 2px dashed #ccc; /* Dashed border for the small placeholder */
+  background-color: #f5f5f5; /* Light grey background for the placeholder */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem; /* Larger font size for better readability */
+  color: #888;
+  border-radius: 10px; /* Adds rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.small-placeholder:hover {
+  background-color: #e0e0e0; /* Darker background on hover */
+  color: #666; /* Darker text on hover */
+}
+
+.large-placeholder-box {
+  width: 500px; /* Consistent width with small-placeholder */
+  height: 800px; /* Taller height for the larger content */
+  border: 3px dashed #ccc; /* Thicker border for emphasis */
+  background-color: #e0e0e0; /* Slightly darker background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem; /* Larger font size for emphasis */
+  color: #666; /* Darker text color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.large-placeholder-box:hover {
+  background-color: #d3d3d3; /* Darker background on hover */
+  color: #555; /* Darker text on hover */
+}
+
+/* Center the Placeholder Text */
+.placeholder-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Ensure the text is vertically centered */
+  text-align: center; /* Horizontally center the text */
+}
+
+/* Responsive Design for Placeholders */
+@media (max-width: 768px) {
+  .small-placeholder,
+  .large-placeholder-box {
+    width: 100%; /* Full width on smaller screens */
+    height: auto; /* Auto height for flexibility */
+    font-size: 1rem; /* Adjust font size for readability */
+  }
+}

@@ -1,0 +1,270 @@
+.step-two-container {
+    margin-top: 30px;
+    background: #fff;
+    flex-grow: 1;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(135, 119, 119, 0.1);
+    width: 100%; ; 
+    font-size: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box; 
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between; 
+    margin-bottom: 20px;
+    margin-top:20PX;
+}
+
+.left-buttons {
+    display: flex;
+    gap: 10px; /* Space between the Select All buttons */
+}
+
+.train-button, .btn {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border: 1px solid #000;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.train-button {
+    margin-left: auto; /* Push the Train button to the right end */
+}
+
+.train-button:hover, .btn:hover {
+    background-color: #ff9800;
+    border-color: #ff9800;
+    color: #fff;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    display: inline-block;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 100%;
+    padding-right: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.search-bar input:focus {
+    outline: none; /* Ensure no outline on focus */
+    border-color: #ff9800; /* Optional: add custom border color on focus */
+}
+
+.search-bar .input-divider {
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 1px;
+    background-color: #ccc;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    cursor: pointer;
+}
+
+.search-icon:hover {
+    color: #ff9800;
+}
+
+.material-list {
+    margin-top: 20px;
+    width: 100%; /* Ensure the list takes up the full width */
+    overflow-x: auto; /* Allow horizontal scrolling if necessary */
+}
+
+.material-header, .material-row {
+    display: grid;
+    width: 100%; /* Ensure full width usage */
+    grid-template-columns: repeat(8, 1fr); /* Eight equal-width columns */
+    gap: 10px; /* Reduced gap to prevent overflow */
+    padding: 10px;
+    box-sizing: border-box;
+    align-items: center; /* Center content vertically */
+}
+
+.material-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+}
+
+.material-header span, .material-row span {
+    text-align: center;
+    font-size: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.material-row {
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 15px;
+    align-items: center; /* Align content vertically */
+    width: 100%; /* Ensure row takes up full width */
+}
+
+.material-row .file-name {
+    cursor: pointer;
+    color: #ff9800;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.material-row .file-name:hover {
+    color: #d68a19;
+}
+
+/* Removed the .file-name::after pseudo-element */
+
+.material-row button {
+    padding: 5px 10px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.material-row button:hover {
+    background-color: #e68900;
+}
+
+.material-row .delete-icon,
+.material-row .repeat-icon {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.delete-icon {
+    color: #dc3545;
+}
+
+.delete-icon:hover {
+    color: #c82333;
+}
+
+.repeat-icon {
+    color: #ff9800;
+}
+
+.repeat-icon:hover {
+    color: #e68900;
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 50;
+    text-align: center;
+  }
+  
+  .modal-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+  }
+  
+  .confirm-button {
+    background-color: #bb0d0d;
+    color: white;
+  }
+  
+  .cancel-button {
+    background-color: #25ae27;
+  }
+  
+  .confirm-button:hover {
+    background-color: #e70e0e;
+  }
+  
+  .cancel-button:hover {
+    background-color: #18d711;
+  }
+  .file-detail-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .file-detail-modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+  }
+  
+  .file-detail-modal-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    background-color: #ff9800;
+    color: white;
+  }
+  
+  .file-detail-modal-button:hover {
+    background-color: #e68900;
+  }
+  .no-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    text-align: center;
+    color: #777;
+  }
+  
+  .no-data-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  

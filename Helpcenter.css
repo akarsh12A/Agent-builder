@@ -1,0 +1,486 @@
+/*container allignment*/
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 2%;
+  width: calc(100% - 250px); /* Adjust width to account for the fixed sidebar */
+  transition: margin-left 0.3s ease;
+  padding-left: 20px;
+}
+.fixed-container {
+
+  top: 0;
+  right: 0;
+  width: 250px; /* Adjust width as needed */
+  height: 100%;
+  background: #fff;
+  border-left: 2px solid #ccc;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it is above other content */
+}
+/*Helpcenter*/
+.help-center {
+  max-width: 800px;
+  text-align: left;
+  margin-left: 270px; /* Default margin when sidebar is expanded */
+  transition: margin-left 0.3s;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  margin-left: 0px;
+  margin-top: -20px;
+}
+
+.help-center h1 {
+  color: #ffa500;
+}
+.main-container a {
+  color: #ffa500;
+  text-decoration: none;
+}
+
+.main-container a:hover {
+  text-decoration: underline;
+}
+
+/* Layout Styles */
+.main-container {
+  background: #fff;
+  border: 2px solid #ffc400;
+  border-radius: 8px;
+  color: #333;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(135, 119, 119, 0.1);
+  text-align: flex-start;
+}
+
+/*callender*/
+.calendar-and-form {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.calendar-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 550px; /* Fixed width */
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 0;
+  justify-content: center;
+  height: 400px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #ffa500;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.calendar-header .arrow {
+  cursor: pointer;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  color: #ffa500;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.calendar-days .day {
+  padding: 10px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #000000;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.calendar-days .day:hover {
+  background-color: #ffa500;
+  color: #1a1a1a;
+}
+
+.calendar-days .day.selected {
+  background-color: #ffa500;
+  color: #1a1a1a;
+}
+
+.calendar-days .day.blank {
+  background-color: transparent;
+  cursor: default;
+}
+
+/*personal details*/
+.personal-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 550px; /* Fixed width */
+  text-align: center;
+  margin-top: -20px;
+  margin-left: 0;
+  justify-content: center;
+  height: 500px; /* Adjusted height to fit additional fields */
+}
+
+.personal-details-form h3 {
+  color: #ffa500;
+  margin-bottom: 15px;
+}
+
+.personal-details-form label {
+  display: block;
+  margin-bottom: 10px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.personal-details-form input[type="text"],
+.personal-details-form input[type="email"],
+.personal-details-form input[type="number"],
+.personal-details-form textarea {
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.personal-details-form input[type="text"]::placeholder,
+.personal-details-form input[type="email"]::placeholder,
+.personal-details-form input[type="number"]::placeholder,
+.personal-details-form textarea::placeholder {
+  color: #aaa;
+}
+
+.personal-details-form textarea {
+  resize: vertical;
+  height: 80px; /* Height for the Reason for Appointment field */
+  background-color: #666;
+  color: #fff;
+}
+
+.personal-details-form select {
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  background-color: #444;
+  color: #fff;
+  font-size: 16px;
+  appearance: none;
+  background: linear-gradient(to bottom, #444 0%, #333 100%);
+  cursor: pointer;
+  position: relative;
+}
+
+.personal-details-form select::after {
+  content: "▼";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ddd;
+  pointer-events: none;
+}
+
+.personal-details-form option {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+.personal-details-form select:hover {
+  border-color: #ffa500;
+}
+
+.personal-details-form select:focus {
+  outline: none;
+  border-color: #ffa500;
+  background-color: #555;
+}
+
+.confirm-button {
+  margin-top: 10px;
+  width: 10%;
+  margin-left: 200px;
+}
+
+.confirm-button button {
+  background-color: #ffa500;
+  color: #1a1a1a;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.confirm-button button:hover {
+  background-color: #fff;
+  color: #1a1a1a;
+}
+
+.dropdown-container {
+  max-height: 200px; /* Set a maximum height */
+  overflow-y: auto; /* Make this section scrollable */
+}
+
+/*appointment*/
+.confirmation-message {
+  background-color: #f0f8ff; /* Light blue background */
+  border: 2px solid #f3c019; /* Dodger blue border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside the box */
+  margin-top: 20px; /* Space above the confirmation box */
+  color: #333; /* Text color */
+  font-family: "Arial", sans-serif; /* Font style */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-left: -6px;
+  width: 100%; /* Adjust the width as needed */
+  margin-top: 10px;
+  height: 250px;
+}
+
+.confirmation-message h3 {
+  margin-top: 0; /* Remove top margin */
+  color: #ffc31e; /* Dodger blue color for the heading */
+  font-size: 1.5em; /* Font size for the heading */
+}
+.confirmation-message p {
+  margin: 10px 0; /* Vertical spacing between paragraphs */
+  font-size: 1em; /* Font size for paragraphs */
+}
+
+.confirmation-message strong {
+  color: #000; /* Strong element text color */
+  font-weight: bold; /* Bold text for labels */
+}
+
+/*chat-bot*/
+/* Container for the chatbot */
+.chatbot-container {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 350px;
+  max-height: 450px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+/* Make the chatbot visible */
+.chatbot-container.visible {
+  display: flex;
+}
+
+/* Header of the chatbot */
+.chat-header {
+  padding: 15px;
+  background-color: #ffd900;
+  border-bottom: 1px solid #ffd900;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+/* Body of the chatbot */
+.chat-body {
+  padding: 20px;
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: #f8f9fa;
+}
+
+/* Chat messages styling */
+.chat-message {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  max-width: 85%;
+}
+
+/* User messages */
+.chat-message.user {
+  background-color: #ffd900;
+  color: white;
+  align-self: flex-end;
+  text-align: right;
+}
+
+/* Bot messages */
+.chat-message.bot {
+  background-color: #e9ecef;
+  color: #343a40;
+  align-self: flex-start;
+  text-align: left;
+}
+
+/* Input section */
+.chat-input {
+  display: flex;
+  padding: 15px;
+  border-top: 1px solid #ffd900;
+  background-color: #ffffff;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+/* Input field */
+.chat-input input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ffd900;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #495057;
+  box-shadow: 0 2px 10px rgba(0, 123, 255, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+/* Focused input field */
+.chat-input input:focus {
+  border-color: #ffd900;
+  outline: none;
+}
+
+/* Send button */
+.chat-input button {
+  margin-left: 10px;
+  padding: 8px 20px;
+  border: none;
+  background-color: #ffd900;
+  color: white;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect on send button */
+.chat-input button:hover {
+  background-color: #ffd900;
+}
+
+/* Chatbot toggle button */
+.chat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffd900;
+  color: white;
+  border: none;
+  padding: 18px;
+  border-radius: 50%;
+  box-shadow: 0 8px 15px rgba(0, 123, 255, 0.2);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Hover effect on chatbot button */
+.chat-button:hover {
+  box-shadow: 0 12px 25px rgba(0, 123, 255, 0.4);
+}
+
+/* Close chat button */
+.close-chat {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+/* Chat icon styling */
+.chat-icon {
+  font-size: 24px;
+}
+
+/*pop up*/
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top of other content */
+}
+
+.popup-content {
+  background-color: #fff; /* White background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 300px; /* Width of the popup */
+}
+
+.popup-content h3 {
+  margin-top: 0;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.popup-content button {
+  padding: 10px 20px;
+  background-color: #000000; /* Blue button color */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.popup-content button:hover {
+  background-color: #ffd518; /* Darker blue on hover */
+}

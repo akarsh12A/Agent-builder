@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* Container for the entire right section */
+.captured-contacts-container {
+  padding: 20px;
+  background-color: #f0f0f1;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: 15px;
+  font-family: "Poppins", sans-serif;
+  transition: width 0.3s ease, margin-left 0.3s ease;
+}
+
+/* Header section: containing the title and the button */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  margin-top: 16px;
+  height: 40px;
+}
+
+/* Page heading styling */
+.page-heading {
+  font-weight: 700;
+  font-size: 32px;
+  color: #222222;
+  margin: 0;
+}
+
+/* Export button styling */
+.export-btn {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 16px;
+  color: #333333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin-bottom: 10px;
+  transition: color 0.2s ease, border 0.2s ease;
+}
+
+.export-btn:hover {
+  color: orange;
+  border: 1px solid orange;
+}
+
+.export-btn::before {
+  content: "\f019";
+  /* Unicode for download icon */
+  font-family: FontAwesome;
+  margin-right: 8px;
+}
+
+.outer-container {
+  background-color: #ffffff;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(231, 231, 231);
+  border-radius: 8px;
+  box-shadow: 0 4px 4px rgb(216, 216, 216);
+}
+
+/* Table container to handle overflow and padding */
+.table-container {
+  overflow-x: auto;
+  height: 85%;
+  width: 96%;
+  border: 1px solid rgb(231, 231, 231);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  box-shadow: 0 4px 4px rgb(216, 216, 216);
+  position: relative;
+  /* For absolute positioning of the tooltip */
+}
+
+/* Contacts table styling */
+.contacts-table {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  background-color: #ffffff;
+  table-layout: fixed;
+  /* Ensures equal width for all columns */
+}
+
+/* Table header styling */
+.contacts-table th,
+.contacts-table td {
+  padding: 14px 20px;
+  text-align: center;
+  /* Center text horizontally */
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 14px;
+  color: #555555;
+  position: relative;
+  /* For absolute positioning of buttons and tooltips */
+}
+
+/* Table header styling */
+.contacts-table th {
+  background-color: rgb(241, 241, 241);
+  color: #333333;
+  font-weight: 600;
+  white-space: nowrap;
+  height: 50px;
+  /* Revert to original height */
+  width: 20%;
+  /* Ensures each header takes up equal width */
+  cursor: pointer;
+}
+
+/* Styling for the empty state (no data) */
+.no-data-row {
+  text-align: center;
+  background-color: #ffffff;
+  height: 200px;
+}
+
+.no-data {
+  padding: 40px;
+  color: #999999;
+  font-size: 18px;
+}
+
+.no-data-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  background: url("") no-repeat center center;
+  background-size: contain;
+  margin-bottom: 100px;
+}
+
+/* Tooltip styling */
+.tooltip {
+  position: absolute;
+  /* Changed to absolute to be relative to the header */
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px 12px;
+  /* Increase padding for larger tooltip */
+  font-size: 14px;
+  /* Increase font size for better visibility */
+  font-family: "Poppins", sans-serif;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  z-index: 1000;
+  /* Ensure tooltip is above all other elements */
+  transform: translateY(-10px);
+  /* Position above the th */
+  visibility: hidden;
+  /* Initially hidden */
+}
+
+.tooltip.show {
+  opacity: 1;
+  visibility: visible;
+  /* Show the tooltip */
+  transform: translateY(-5px);
+  /* Slight slide effect when visible */
+}
+
+/* Tooltip arrow styling */
+.tooltip::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  /* Increase size of the arrow */
+  border-right: 8px solid transparent;
+  /* Increase size of the arrow */
+  border-top: 8px solid #333;
+  /* Increase size of the arrow */
+  bottom: -8px;
+  /* Position arrow closer to the tooltip */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Delayed appearance and disappearance */
+.contacts-table th {
+  position: relative;
+  /* For absolute positioning of tooltips */
+}
+
+.contacts-table th:hover .tooltip {
+  transition-delay: 0.2s;
+  /* Delay before appearing */
+}
+
+.contacts-table th:not(:hover) .tooltip {
+  transition-delay: 0s;
+  /* Immediate disappearance */
+}
+
+/* Conditional colors based on sorting state */
+.sort-asc .triangle-button.up {
+  border-bottom: 6px solid orange;
+  /* Orange color for ascending */
+}
+
+.sort-desc .triangle-button.down {
+  border-top: 6px solid orange;
+  /* Orange color for descending */
+}
+
+.sort-asc .triangle-button.up:hover {
+  border-bottom: 6px solid orange;
+  /* Orange color for ascending */
+}
+
+.sort-desc .triangle-button.down:hover {
+  border-top: 6px solid orange;
+  /* Orange color for descending */
+}
+
+/* Sorting buttons styling */
+.triangle-button {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  /* Reduced size */
+  border-right: 4px solid transparent;
+  /* Reduced size */
+  position: absolute;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.triangle-button.up {
+  border-bottom: 6px solid #999999;
+  /* Reduced size */
+}
+
+.triangle-button.down {
+  border-top: 6px solid #999999;
+  /* Reduced size */
+}
+
+/* Positioning of buttons */
+.contacts-table th {
+  position: relative;
+  /* For absolute positioning of buttons */
+  padding-right: 30px;
+  /* Adjusted space for buttons */
+  text-align: center;
+  /* Center the text horizontally */
+}
+
+/* Adjust the gap and positioning of buttons */
+.contacts-table th .triangle-button.up {
+  top: 20px;
+  /* Adjust vertical position of the up button */
+  right: 8px;
+  /* Reduced horizontal position of the up button */
+}
+
+.contacts-table th .triangle-button.down {
+  top: 28px;
+  /* Adjust vertical position of the down button */
+  right: 8px;
+  /* Same horizontal position as the up button */
+}
+
+/* Show triangle when hovering */
+.contacts-table th:hover .triangle-button.up {
+  border-bottom: 6px solid #333333;
+  /* Hover color */
+}
+
+.contacts-table th:hover .triangle-button.down {
+  border-top: 6px solid #333333;
+  /* Hover color */
+}
+
+.sort-asc .triangle-button.up {
+  border-bottom: 6px solid orange !important;
+  /* Orange color for ascending */
+}
+
+.sort-desc .triangle-button.down {
+  border-top: 6px solid orange !important;
+  /* Orange color for descending */
+}

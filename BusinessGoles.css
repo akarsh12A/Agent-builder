@@ -1,0 +1,454 @@
+/* General Styles */
+body {
+  font-family: "Poppins", sans-serif; /* Updated font */
+  background-color: #f5f6fa; /* Slightly lighter background */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Heading Container */
+.heading-containerb {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 40px 40px; /* Adjusted margin for better spacing */
+  padding: 0;
+}
+
+.headingb {
+  font-size: 36px;
+  margin-right: 20px;
+  color: #222; /* Darker color for heading */
+}
+
+/* Tips Button */
+.tips-button {
+  background-color: #ffffff;
+  border: 1px solid #ddd; /* Lighter border color */
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.tips-button:hover {
+  border-color: #ff9800;
+  background-color: #f9f9f9;
+}
+
+/* Step Section */
+.step {
+  text-align: left;
+  margin: 20px;
+}
+
+.step h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Example Tips Box */
+.example-tips-box {
+  background-color: transparent;
+  padding: 5px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  border: 2px solid rgb(211, 154, 48); /* Matches the orange theme */
+  transition: background-color 0.3s ease;
+}
+
+.example-tips-box:hover {
+  background-color: #fff;
+}
+
+.example-tips-content {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 500px;
+  background-color: #fff;
+  padding: 40px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(15, 15, 15, 0.1);
+  text-align: center;
+  z-index: 999;
+  opacity: 0;
+  transform-origin: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.example-tips-content.active {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.example-tips-content img {
+  max-width: 100%;
+  height: auto;
+  margin-top: -20px;
+  border-radius: 5px;
+}
+
+.example-tips-content p {
+  margin-bottom: 15px;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: left;
+  color: #333;
+}
+
+.ok-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff9800; /* Updated to match orange theme */
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.ok-button:hover {
+  background-color: #e67e22;
+  transform: scale(1.1);
+}
+
+/* Bot Info */
+.bot-info {
+  font-size: 16px;
+  margin: 10px 0 20px 20px;
+  color: #666;
+  margin-left: 40px;
+}
+
+/* Business Name Container */
+.business-name-container {
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  max-width: 100%;
+  margin-left: 40px;
+  margin-right: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.business-name-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.business-name-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.business-name-text {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #333;
+}
+
+.business-name-input {
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Edit Icon */
+.edit-icon {
+  margin-left: 5px;
+  cursor: pointer;
+  color: #ff9800; /* Updated to match orange theme */
+  transition: color 0.3s ease;
+}
+
+.edit-icon:hover {
+  color: black;
+}
+
+/* Add Call to Action */
+.add-action-box {
+  cursor: pointer;
+  font-size: 16px;
+  color: #ff9800; /* Updated to match orange theme */
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.add-action-box:hover {
+  background-color: #f9f9f9;
+}
+
+/* Plus Icon */
+.plus-icon {
+  margin-right: 5px;
+}
+
+/* Action Buttons Container */
+.action-buttons-container {
+  margin: 20px 0 30px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 18%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Action Option */
+.action-option {
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.action-option:hover {
+  color: #ff9800; /* Updated to match orange theme */
+  transform: scale(1.1);
+}
+
+/* Placeholder Container */
+.placeholder-container {
+  margin-top: 30px;
+  padding: 5px 10px;
+  background-color: white;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  display: inline-block;
+  width: 90%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  vertical-align: middle;
+  position: relative;
+}
+
+.placeholder-container.error {
+  border-color: red;
+}
+
+.placeholder-text {
+  font-size: 14px;
+  width: 100%;
+  height: 25px;
+  border: none;
+  background: none;
+  resize: none;
+  padding: 0;
+  outline: none;
+  color: #333;
+}
+
+.placeholder-text:focus {
+  outline: none;
+}
+
+/* Error Message */
+.error {
+  border: 2px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+/* Action Details Container */
+.action-details-container {
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin-top: 10px;
+  position: relative;
+}
+
+/* Save and Delete Buttons */
+.save-button,
+.delete-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 10px;
+  width: 120px;
+  height: 45px;
+  margin-top: 20px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.save-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.save-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #e53935;
+  transform: scale(1.05);
+}
+
+/* Control Icons */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.control-icon {
+  cursor: pointer;
+  color: #ff9800; /* Updated to match orange theme */
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.control-icon:hover {
+  color: #333;
+}
+
+/* Options List */
+.options-list {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.option-item {
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.option-item:hover {
+  background-color: #ff9800; /* Updated to match orange theme */
+  color: white;
+}
+
+/* Confirmation Dialog */
+.confirmation-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  text-align: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform-origin: center;
+}
+
+.confirmation-dialog.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.confirmation-message {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+.confirmation-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirmation-buttons button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.confirm-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+}
+
+.confirm-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.cancel-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+}
+
+.cancel-button:hover {
+  background-color: #e53935;
+  transform: scale(1.05);
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Popup Animation */
+.example-tips-content.active {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.confirmation-dialog.active {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.confirmation-dialog:not(.active) {
+  animation: fadeOut 0.3s ease-in-out;
+}

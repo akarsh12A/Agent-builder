@@ -1,0 +1,268 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #000;
+}
+
+a:hover {
+  color: #000;
+}
+
+a:active {
+  color: #000;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  padding: 0;
+  transition: width 0.3s;
+  overflow-y: auto;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #ffffff;
+  z-index: 10;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+h2 {
+  font-size: 1.5em;
+  transition: opacity 0.3s;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar.collapsed h2 {
+  opacity: 0;
+}
+
+.dropdown-container {
+  position: sticky;
+  top: 83px;
+  background-color: #ffffff;
+  z-index: 10;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background-color: #ffffff;
+  cursor: pointer;
+  border: 1px solid #ff9800;
+  border-radius: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.dropdown-header:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-icon {
+  transition: transform 0.3s;
+}
+
+.dropdown-icon.open {
+  transform: rotate(180deg);
+}
+
+.dropdown-title {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.dropdown-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ddd;
+  border-radius: 0 0 10px 10px;
+  background-color: #ffffff;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.dropdown-menu li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, width 0.3s;
+  color: #000;
+  width: 100%;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f0f0f0;
+  width: 100%;
+}
+
+.dropdown-menu li:active,
+.dropdown-menu li.active {
+  background-color: #ff9800;
+  color: #fff;
+}
+
+.dropdown-menu li svg {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.toggle-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.toggle-button :hover {
+  color: #ff9800;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, width 0.3s;
+  overflow: hidden;
+  color: #000;
+  width: 100%;
+}
+
+.sidebar li:hover {
+  background-color: #f0f0f0;
+  width: 95%;
+  border-radius: 10px;
+}
+
+.sidebar li:active,
+.sidebar li.active {
+  background-color: #ff9800;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.sidebar li svg {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.sidebar.collapsed li {
+  justify-content: center;
+}
+
+.sidebar.collapsed li span {
+  display: none;
+}
+
+.section-title {
+  font-size: 0.9em;
+  color: #aaa;
+  margin: 20px 0 10px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
+.sidebar.collapsed .section-title {
+  padding-left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #f8f9fa;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+  border: 2px solid #f8f9fa;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.app-container.expanded .main-content {
+  margin-left: 200px;
+  transition: margin-left 0.3s;
+}
+
+.app-container.collapsed .main-content {
+  margin-left: 20px;
+  transition: margin-left 0.3s;
+}

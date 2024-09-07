@@ -1,0 +1,119 @@
+.integrations-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    width:200%;
+}
+
+.integrations-heading {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.integrations-subheading {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.platform-section {
+    margin-bottom: 40px;
+}
+
+.platform-heading {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.platforms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.platform-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.platform-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.chatsimple-icon {
+    background: url('/path/to/chatsimple-icon.png') no-repeat center/contain;
+}
+
+.messenger-icon {
+    background: url('/path/to/messenger-icon.png') no-repeat center/contain;
+}
+
+.whatsapp-icon {
+    background: url('/path/to/whatsapp-icon.png') no-repeat center/contain;
+}
+
+.instagram-icon {
+    background: url('/path/to/instagram-icon.png') no-repeat center/contain;
+}
+
+.sms-icon {
+    background: url('/path/to/sms-icon.png') no-repeat center/contain;
+}
+
+.gmail-icon {
+    background: url('/path/to/gmail-icon.png') no-repeat center/contain;
+}
+
+.salesforce-icon {
+    background: url('/path/to/salesforce-icon.png') no-repeat center/contain;
+}
+
+.hubspot-icon {
+    background: url('/path/to/hubspot-icon.png') no-repeat center/contain;
+}
+
+.zoho-icon {
+    background: url('/path/to/zoho-icon.png') no-repeat center/contain;
+}
+
+.pipedrive-icon {
+    background: url('/path/to/pipedrive-icon.png') no-repeat center/contain;
+}
+
+.platform-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.platform-description {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.connect-button, .coming-soon-button, .help-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+.help-button {
+    background-color: #007bff;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+}
+
+.coming-soon-button {
+    background-color: #ffc107;
+    color: white;
+}

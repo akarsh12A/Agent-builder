@@ -1,0 +1,411 @@
+
+.Qualify-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 0%;
+    width: calc(100% - 250px); /* Adjust width to account for the fixed sidebar */
+    transition: margin-left 0.3s ease;
+    padding-left: 20px;
+    }
+    
+    .Qualify-header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: transparent;
+      padding: 0;
+      margin-left: 20px;
+      padding-top: 20px;
+      width: 1000px;
+      margin-right: 20px;
+    }
+    
+    .Qualify-header-content {
+      display: flex;
+      align-items: center;
+      width: 1200px;
+    }
+    
+    .Qualify-header-title {
+      font-weight: bold;
+      font-size: 24px;
+      margin-right: 20px;
+      font-family: Arial, sans-serif;
+    }
+    
+    /* Dark and Light Mode for Header Title */
+    .Qualify-header-title.dark-mode {
+      color: #000; /* Dark mode color */
+    }
+    
+    .Qualify-header-title.light-mode {
+      color: #888; /* Light mode color */
+    }
+    
+    .Qualify-example-tips-box {
+      background-color: orange;
+      padding: 1px 15px;
+      border-radius: 25px;
+      cursor: pointer;
+      border: 5px solid #fff;
+      color: black;
+      transition: border-color 0.3s ease;
+    }
+    
+    .Qualify-example-tips-box:hover {
+      border-color: orange;
+      
+      transform: scale(1.0) translateZ(0); /* Stabilize the transform */
+      padding: 9.px 20.5px; /* Compensate for the slight size change */
+      
+    }
+    
+    .bot-info {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+    
+    .message-box, .info-message, .confirmation-box {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #fff;
+      border: 2px solid #ccc;
+      padding: 15px 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      max-width: 800px;
+      height: 450px;
+      width: 800px;
+      padding-left: 20px;
+      margin-top: 40px;
+      margin-left: 60px;
+  
+    }
+    
+    .message-box ul {
+      padding-left: 20px;
+    }
+    
+    .image-box img {
+      width: 750px;
+      height: 300px;
+    }
+    
+    .vinod {
+      padding-left: 360px;
+      padding-top: 0px;
+      color: orange;
+      border: none;
+      background-color: #fff;
+    }
+    
+    /* New CSS for Toggle Switch */
+    .toggle-containerQ {
+      position: fixed;
+      top: 40px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      margin-right: 120px;
+    }
+    
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 53px;
+      height: 28px;
+      margin-left: 40px; /* Space between the label and the switch */
+    }
+    
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+    
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 4px;
+      bottom: 4px;
+      background-color: black; /* Changed to black */
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+    
+    input:checked + .slider {
+      background-color: orange; /* Orange color for the switch when checked */
+    }
+    
+    input:checked + .slider:before {
+      transform: translateX(25px); /* Adjusted to match the switch size */
+    }
+    
+    .toggle-label {
+      font-weight: bold;
+      font-size: 20px;
+    }
+    
+    /* New CSS for Questions Box */
+    .Qualify-questions-box {
+      margin-top: 30px;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-left: 20px;
+      width: 1000px;
+    }
+    
+    .Qualify-questions-header{
+      display: flex;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .Qualify-question-column, .Qualify-enabled-column {
+      display: flex;
+      
+    }
+    
+    .Qualify-question-column {
+      flex: 2; /* More space for questions */
+      padding: 10px;
+      border-bottom: 2px solid #ddd;
+      font-size: 16px;
+    }
+    .Qualify-middle-column{
+      margin-left: 350px;
+    }
+    .Qualify-enabled-column  {
+      flex: 1;
+      padding: 5px;
+      border-bottom: 2px solid #ddd;
+      text-align: center;
+      margin-left: px; /* Move towards the right */
+    }
+    
+    .Qualify-question-row{
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      background-color: #f9f9f9; /* Box background color */
+      border: 1px solid #ddd; /* Border for the box */
+      border-radius: 8px; /* Rounded corners */
+      padding: 10px;
+    }
+    
+    .delete--icon {
+      color: rgb(156, 154, 154);
+      cursor: pointer;
+      font-size: 20px;
+      margin-left: 10px;
+      margin-top: 0px;
+    }
+    .delete--icon:hover {
+          color: rgb(193, 13, 13);
+    }
+    .Qualify-add-button, .Qualify-save-button{
+      padding: 10px 20px;
+     
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    .Qualify-add-button {
+      background-color:white; /* Green */
+      color: #000000;
+      width: 958px;
+      border:dotted;
+    }
+    .Qualify-add-button:hover {
+      border-color: orange;
+      color: orange;
+    }
+    
+    
+    .Qualify-save-button {
+      background-color: rgb(48, 128, 48); /* Blue */
+      color: white;
+      margin-top: 20px;
+    }
+    .Qualify-save-button:hover {
+      background-color:green; /* Blue */
+      color: black;
+    
+    }
+    
+    
+    /* CSS for Popup Message */
+    /* CSS for Popup Message */
+    .popup-message {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: black;
+      color: orange;
+      padding: 10px 20px;
+      border-radius: 5px;
+      z-index: 1000;
+      font-size: 15px;
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+    }
+    
+    
+    /* New CSS for Toggle Switch */
+    .Qualify-Stoggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 53px;
+      height: 25px;
+      margin-left: 0px; /* Space between the label and the switch */
+      margin-top: -5px;
+      color: green;
+    }
+    
+    .Qualify-Stoggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+    
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 4px;
+      bottom: 4px;
+      top: 3px;
+      background-color: black; /* Changed to black */
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+    
+    input:checked + .slider {
+      background-color: orange; /* Orange color for the switch when checked */
+    }
+    
+    input:checked + .slider:before {
+      transform: translateX(25px); /* Adjusted to match the switch size */
+    }
+    .question-status {
+      
+      margin-left: 400px; /* Increase space between question text and status */
+    }
+    
+    /* Footer Info Section */
+    .footer-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-left: 20px;
+      width: 1000px;
+    }
+    
+    .leads-count {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    
+    .upgrade-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color:black;
+      background-color: orange;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-right: 600px;
+    }
+    /* Overlay effect when inactive */
+  .inactive-mode {
+    position: relative;
+    background-color: rgba(224, 212, 212, 0.7);
+    pointer-events: none; /* Disable interactions */
+  }
+  
+  /* Inactive popup box */
+  .inactive-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    border-radius: 10px;
+    width: 550px;
+  }
+  
+  .inactive-popup h2 {
+    margin-bottom: 10px;
+    color: black;
+    margin-left: 0px;
+  }
+  
+  .inactive-popup p {
+    margin-bottom: 15px;
+    color: #333;
+    margin-left: 15px;
+  }
+  
+  .center-toggle {
+    display: flex;
+    justify-content: center;
+  }
+  .inactive-toggle{
+    margin-left: 180px;
+  }
+  .inactive-popup .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #333; /* Adjust color as needed */
+  }
+  

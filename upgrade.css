@@ -1,0 +1,267 @@
+.subscription-plans {
+  margin: 20px;
+}
+
+.billing-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative; /* Allows positioning of .save-20 */
+}
+
+.billing-option {
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  margin-top: 40px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.billing-option.active {
+  background-color: #e0e0ff;
+  font-weight: bold;
+}
+
+.billing-option:hover {
+  background-color: #d0d0ff;
+  transform: scale(1.05);
+}
+
+.save-20 {
+  position: absolute;
+  top: 0; /* Aligns the .save-20 message at the top of the container */
+  width: 100%;
+  text-align: center;
+  color: #ffa500;
+  font-weight: bold;
+}
+
+.plans {
+  display: flex;
+  justify-content: space-between;
+}
+
+.plan {
+  width: 24%;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 550px; /* Set a minimum height to match the tallest container */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.plan:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.plan.enterprise {
+  height: 550px; /* Adjust height based on the content of the enterprise plan */
+}
+
+.plan .price {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.plan ul {
+  list-style-type: none;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.plan ul li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease-in-out;
+}
+
+.plan ul li::before {
+  content: "✔"; /* Unicode character for the tick mark */
+  margin-right: 8px; /* Space between the tick mark and the list item text */
+  color: green; /* Change this to whatever color you prefer */
+  font-weight: bold; /* Optional: Makes the tick mark bold */
+}
+
+.plan button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ffa500;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: auto;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.plan button:hover {
+  background-color: #e69500;
+  transform: scale(1.05);
+}
+
+.plan.business .price {
+  background-color: #ffa500;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.plan.enterprise .price {
+  font-size: 20px;
+}
+
+.plan.enterprise button {
+  background-color: black;
+}
+
+.add-ons {
+  margin-top: 40px;
+}
+
+.add-ons-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.add-on {
+  width: 30%;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.add-on:hover {
+  transform: translateY(-5px);
+}
+
+.add-on .price {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.add-button,
+.coming-soon {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.add-button {
+  background-color: #ffa500;
+  color: #fff;
+}
+
+.add-button:hover {
+  background-color: #e69500;
+  transform: scale(1.05);
+}
+
+.coming-soon {
+  background-color: #b0b0b0;
+  color: #fff;
+}
+
+.coming-soon:hover {
+  background-color: #a0a0a0;
+}
+
+.reviews-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 16px;
+  padding: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.review-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 300px;
+  min-width: 280px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 12px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.avatar:hover {
+  transform: rotate(360deg);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.header-info h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.header-info p {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.date {
+  font-size: 12px;
+  color: #999;
+}
+
+.rating {
+  margin-left: auto;
+  font-size: 16px;
+  color: gold;
+}
+
+.card-body {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
